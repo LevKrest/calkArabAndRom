@@ -17,7 +17,7 @@ public class Main {
     static char operation;
 
     public static void main(String[] args) {
-        System.out.println("Write an expression using 2 numbers and operations +,-,*,/");
+        System.out.println("Write an expression using 2 numbers (from 1 to 10) and operations +,-,*,/");
 
         String userInput = scanner.nextLine();
 
@@ -91,7 +91,7 @@ public class Main {
       if (romOrArab1==1){
           numberInt1=romInArab(number1);
           numberInt2=romInArab(number2);
-          if (numberInt1>10 || numberInt2>10){throw new InputMismatchException("Your operation does not meet the requirements");}
+          if (numberInt1==0 || numberInt2==0 ||numberInt1>10 || numberInt2>10){throw new InputMismatchException("Your operation does not meet the requirements");}
           else{
           result = calc(numberInt1, numberInt2, operation);
           //System.out.println("Result for Roman numerals");
@@ -102,7 +102,7 @@ public class Main {
       else {
           numberInt1= Integer.parseInt(number1);
           numberInt2= Integer.parseInt(number2);
-          if (numberInt1>10 || numberInt2>10){throw new InputMismatchException("Your operation does not meet the requirements");}
+          if (numberInt1==0 || numberInt2==0 || numberInt1>10 || numberInt2>10){throw new InputMismatchException("Your operation does not meet the requirements");}
           else{
           result = calc(numberInt1, numberInt2, operation);
           //System.out.println("Result for Arabic numerals");
